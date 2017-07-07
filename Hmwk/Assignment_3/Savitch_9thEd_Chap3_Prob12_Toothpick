@@ -1,0 +1,54 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int user;
+    int comp;
+    int x = 25;
+
+        do{
+            cout << "Players Turn: ";
+            cin >> user;
+            if(user < 1 || user >3)
+            {
+                cout << endl << "Error." << endl;
+            }
+            while(user <1 || user >3);
+            x = x-user;
+            if (x > 4 )
+            {
+                comp = 4 - user;
+            }
+            else if(x >=2 && x <=4)
+            {
+                if(x == 2)
+                {
+                    comp = x - 1;
+                }
+                if(x == 3)
+                {
+                    comp = x- 2;
+                }
+                if(x == 4)
+                {
+                    comp = x- 3;
+                }
+            }
+            else if (x == 1)
+            {
+                comp = 1;
+                cout << "YOU WON!" << endl;
+            }
+            else
+            {
+                cout << "YOU LOSE! Computer won!" << endl;
+                return 0;
+            }
+            cout << "Computer turn: " << comp;
+            x = x - comp;
+            cout << endl << "Toothpicks left: " << x << endl;
+        }
+        while(x > 0);
+        return 0;
+    
+}

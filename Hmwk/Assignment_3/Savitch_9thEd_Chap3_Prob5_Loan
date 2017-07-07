@@ -1,0 +1,37 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    double rate;
+    double loan;
+    double si;
+    double bal;
+    int month;
+    char cont;
+    do{
+        cout << "Enter total loan amount: "; 
+        cin >> loan;
+        cout << endl << "Enter rate of interest: ";
+        cin >> rate;
+        cout << endl <<"Monthly payment = " << (loan/20) << endl;
+        si = 0;
+        bal = loan;
+        month = 0;
+        while (bal > 0)
+        {
+            si+= ((rate*bal)/(100*12));
+            month++;
+            bal -= ((loan/20)-((rate *bal)/(100*12)));
+            if (bal<0)
+            {
+                bal = 0;
+                cout << "balance left: " << bal << endl;
+            }
+            cout << "Simple annualized interest is: " << ((si*100*12)/(loan*month));
+            cout << "To repeat the calculation, press Y" << endl;
+            cin >> cont;
+        }
+        while (cont == 'y' || cont == 'Y');
+    }
+}

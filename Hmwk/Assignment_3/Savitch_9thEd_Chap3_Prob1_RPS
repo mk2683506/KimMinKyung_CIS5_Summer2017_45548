@@ -1,0 +1,85 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    char x = ' ';
+    char y = ' ';
+    int i = 0;
+    while (i != 1)
+    {
+        cout << "Player 1 choose between Rock Paper Scissor (R,P,S)" << endl;
+        cin >> x;
+        cout << "Player 2 choose between Rock Paper Scissor (R,P,S)" << endl;
+        cin >> y;
+        if (x == 'r')
+        {
+            x = 'R';
+        }
+        if (x == 'p')
+        {
+            x = 'P';
+        }
+        if (x = 's')
+        {
+            x = 'S';
+        }
+        if (y = 's')
+        {
+            y = 'S';
+        }
+        if (y = 'p')
+        {
+            y = 'P';
+        }
+        if (y = 'r')
+        {
+            y = 'R';
+        }
+        if (x == 'R' && y == 'R')
+        {
+            cout << "Nobody Wins"<< endl;
+        }
+        if (x == 'P' && y == 'P')
+        {
+            cout << "Nobody Wins" << endl;
+        }
+        if (x == 'S' && y == 'S')
+        {
+            cout << "Nobody Wins" << endl;
+        }
+        if (x == 'S' && y == 'R')
+        {
+            cout << "Rock breaks Scissor" << endl;
+            cout << "Player 2 wins" << endl;
+        }
+        if (x == 'R' && y == 'S')
+        {
+            cout << "Rock breaks Scissor" << endl;
+            cout << "Player 1 wins" << endl;
+        }
+        if (x == 'S' && y == 'P')
+        {
+            cout << "Scissor cut Paper" << endl;
+            cout << "Player 1 wins" << endl;
+        }
+        if (x == 'P' && y == 'S')
+        {
+            cout << "Scissor cut Paper" << endl;
+            cout << "Player 2 wins" << endl;
+        }
+        if (x == 'R' && y == 'P')
+        {
+            cout << "Paper covers Rock" << endl;
+            cout << "Player 2 wins" << endl;
+        }
+        if (x == 'P' && y == 'R')
+        {
+            cout << "Paper covers Rock" << endl;
+            cout << "Player 1 wins" << endl;
+        }
+        cout << "If You want to end the match, press 1" << endl;
+        cin >> i;
+    }
+    return 0;
+}

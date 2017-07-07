@@ -1,0 +1,27 @@
+//Assignment 3 #5
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int numberOfDivisors;
+    cout << "All prime numbers between 3 and 100: " << endl;
+    for (int i =3; i <=100; i++)
+    {
+        numberOfDivisors = 0;
+        for (int j = 2; j <=i/2; j++)
+        {
+            if(i % j == 0)
+            {
+                numberOfDivisors++;
+                break;
+            }
+        }
+        if(numberOfDivisors == 0)
+        {
+            cout << i << " ";
+        }
+    }
+    cout << endl;
+    return 0;
+}

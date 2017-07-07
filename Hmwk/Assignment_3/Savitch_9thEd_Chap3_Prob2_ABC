@@ -1,0 +1,38 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main()
+{
+    int a;
+    int b;
+    int c;
+    double d;
+    char cont;
+    do{
+        cout << "Enter value of a: ";
+        cin >> a;
+        cout << endl << "Enter value of b: ";
+        cin >> b;
+        cout << endl << "Enter value of c: ";
+        cin >> c;
+        d = (b*b-4*a*c);
+        if (d == 0.0)
+        {
+            cout << "Root of equation is: " << -b/a<< endl;
+        }
+        else if (d > 0.0)
+        {
+            cout << "Roots of Equation are: " << (((-1*b)+sqrt(d))/(2*a));
+            cout << " and " << (((-1*b)-sqrt(d))/(2*a));
+        }
+        else{
+            cout << "Roots of equation " << endl << (-1*b)/(2*a) << " + i" << sqrt(-1*d) << endl;
+            cout << (-1*b)/(2*a) << " -i" << sqrt(-1*d) << endl;
+        }
+        cout << "If you want to repeat, press Y" << endl;
+        cin >> cont;
+    }
+while (cont == 'y'|| cont == 'Y');
+return 0;
+}

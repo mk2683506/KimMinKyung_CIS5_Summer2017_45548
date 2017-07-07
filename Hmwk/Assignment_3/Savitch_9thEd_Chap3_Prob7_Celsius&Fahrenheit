@@ -1,0 +1,17 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    int celsius = 100;
+    int fahrenheit;
+    cout << celsius << " " << fahrenheit << endl;
+    do{
+        celsius--;
+        fahrenheit = ((9*celsius)/5)+32;
+        cout << celsius << " " << fahrenheit << endl;
+    }
+    while (celsius != fahrenheit);
+    cout << endl << "The temperature that has equivalent values in Celsius and Fahrenheit is: " << celsius << endl;
+    return 0;
+}

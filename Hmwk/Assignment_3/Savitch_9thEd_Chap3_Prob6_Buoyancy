@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    double weight;
+    double buoyancy;
+    double radius;
+    cout << "Enter weight in pounds" << endl;
+    cin >> weight;
+    cout << "Enter radius in feet" << endl;
+    cin >> radius;
+    buoyancy = 62.4*((4*3.14*radius*radius*radius)/3);
+    if(buoyancy >= weight)
+    cout << "The Sphere will float in water" << endl;
+    else{
+        cout << "The Sphere will sink in water" << endl;
+    }
+}

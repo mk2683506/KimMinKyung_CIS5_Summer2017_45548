@@ -1,0 +1,56 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    string date;
+    int begHours;
+    int endHours;
+    int begMinute;
+    int endMinute;
+    double lengthOfTheCall;
+    double cost;
+    int i = 0;
+    while(i!= 1)
+    {
+        cout << "When does the call take place? (Mo Tu We Th Fr Sa Su)" << endl;
+        cin >> date;
+        cout << "Which hour does the call take place?(1~24)" << endl;
+        cin >> begHours;
+        cout << "Which minute does the call take place? (0~59)" << endl;
+        cin>> begMinute;
+        cout << "Which hour does the call end?(1~24)" << endl;
+        cin >> endHours;
+        cout << "Which minute does the call end? (0~59)" << endl;
+        cin>> endMinute;
+        //Mo Tu We Th Fr Sa Su
+        lengthOfTheCall = (endHours-begHours)*60+endMinute-begMinute;
+        cout << lengthOfTheCall;
+        if(date == "Mo"||"Tu"||"We"||"Th"||"Fr")
+        {
+            if(begHours > 8 && begHours < 18)
+            {
+                cost = lengthOfTheCall*0.40;
+            }
+            else if(begHours <8 || begHours >18)
+            {
+                cost = lengthOfTheCall*0.25;
+            }
+        }
+        if(date == "Sa")
+        {
+            cost = lengthOfTheCall*0.15;
+        }
+        if(date == "Su")
+        {
+            cost = lengthOfTheCall*0.15;
+        }
+        cout << endl;
+        cout << "The Cost for a Long-Distance Call is " << cost<< ".";
+        cout << endl;
+        cout << "If you wish to end this, type in 1.";
+        cin >> i;
+        cout << endl;
+    }
+    return 0;
+}
