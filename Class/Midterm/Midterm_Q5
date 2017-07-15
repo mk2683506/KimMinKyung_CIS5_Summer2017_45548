@@ -1,0 +1,45 @@
+// midterm question 5
+
+#include <iostream>
+
+using namespace std;
+
+namespace global
+{
+    bool executing_code ;
+}
+
+void employee() ;
+
+int main()
+{
+    global::executing_code = true ;
+    while ( global::executing_code )
+    {
+        employee() ;
+    }
+    return 0 ;
+}
+
+void employee()
+{
+    double salary ;
+    int hours ;
+    int overtime ;
+    double rate ;
+    int work_limit = 40 ; // adjustable in the source code if desired
+
+    cout << "Enter hours worked: " ;
+    cin >> hours ;
+    if (hours < 0) { global::executing_code = false ; return ; }
+    cout << "Enter hourly rate of the worker ($00.00): " ;
+    cin >> rate ;
+    overtime = hours - work_limit ;
+    if (overtime > 0)
+    {
+        salary = ( work_limit * rate ) + ( overtime * rate * 1.5 ) ;
+    }
+    else { salary = hours * rate ; }
+    cout << "Gross Pay is: $" << salary << "\n\n" ;
+    return;
+}
