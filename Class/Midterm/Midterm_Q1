@@ -1,0 +1,34 @@
+//midterm question 1
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+    {
+        int x;
+    
+        cout << "input a positive number" << endl;
+        cin >> x;
+        cout << endl;
+    
+        while (x<0 || x%2 ==0)
+        {
+            cout << "Error. Enter odd positive number" << endl;
+            cin >> x;
+        }    
+        for (int i=x; i>=1; x--)
+        {
+            for (int c=x; c>1; c--)
+            {
+                if (i==c||c==(x+1)-i) 
+                cout << c;
+                else cout << "";
+            }
+            cout << endl;
+        }
+    }    
+    return 0;
+}
