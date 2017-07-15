@@ -1,0 +1,23 @@
+//midterm question 6
+
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+
+double x;
+int number
+
+cin >> x;
+cin >> number;
+
+double term = x;
+double sum = term;
+{
+    for (x=2; x<=10; x++)
+    {
+        term *= -x/(double)x;
+        sum += term;
+    }
+    return 0;
+}
