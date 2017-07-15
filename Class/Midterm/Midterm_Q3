@@ -1,0 +1,90 @@
+//midterm question 3
+
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+    string date,payee,name,amount;
+    int amountFigure,checkAmount=0,ascii;
+  
+    cout<<"Enter date mm/dd/yy:";
+    getline(cin,date);
+
+    cout<<endl;
+  
+    cout<<"enter payee name:";
+    getline(cin,payee);
+
+    AGAIN:
+    do
+    {
+        cout<<"Enter the amount:"<<endl;
+        cout<<"The value should be an integer between $1 and $2999(No cents):";
+        getline(cin,amount);
+    
+        while(amount.size()>4||amount.size()<1)
+        {
+            cout<<endl;
+            cout<<"Invalid Input. Has to be a value in-between 1 - 4 digits."<<endl;
+            cout<<endl;
+            goto AGAIN;
+        }
+  
+        for(int i=0; i<amount.size(); i++)
+        {
+          ascii=static_cast<int>(amount[i]);
+          if(ascii>57||ascii<48)
+          {
+              cout<<endl;
+              cout<<"Invalid Input. Enter numbers only"<<endl;
+              cout<<endl;
+                goto AGAIN;
+            }
+        else
+          {
+            checkAmount=2;
+          }
+        }
+  
+        while(checkAmount==2)
+       {
+            stringstream conv(amount);
+            conv>>amountFigure;
+        
+            if(amountFigure>=1&&amountFigure<=2999)
+            {
+                checkAmount=1;
+            }
+            else
+            {
+                cout<<endl;
+                cout<<"The value you entered is invalid"<<endl;
+                cout<<endl;
+                goto AGAIN;
+            }
+        }
+    }
+    while(checkAmount==0);
+      
+    cout<<"Enter account holder name: ";
+    getline(cin,name);
+    
+    cout<<endl;
+    
+    cout<<name<<endl;
+    cout<<"STREET ADDRESS"<<endl;
+    cout<<"CITY, STATE, ZIP "<<"Date: "<<date<<endl;
+    cout<<"Pay to the order of: "<<payee<<" $ "<<amount<<endl;
+    cout<<amount<<endl;
+    cout<<"BANK of CSC5" <<endl;
+    cout<<"FOR: GOTTA PAY THE RENT"<<name<<endl;
+    cout<<endl;
+
+    
+    return 0;
+}
