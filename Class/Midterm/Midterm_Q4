@@ -1,0 +1,102 @@
+//midterm question 4
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int choice,hours;
+    double save,bill;
+
+    cout<<"Enter the monthly hours consumed:"<<endl;
+    cin>>hours;
+    cout << " Customer Packages"<<endl;
+    cout << "1 - $16.75 per month, 5 hours access"<<endl;
+    cout << "2 - $23.75 per month, 15 hours access"<<endl;
+    cout << "3 - $29.95 per month unlimited access"<<endl;
+
+    cout << "Select a package: ";
+    cin >> choice;
+
+    switch (choice)
+    {
+    
+    case 1:
+    if (hours>20)
+    {
+        bill = (hours-20)*1 +(15)*0.75+16.75;
+        cout <<"The Calculated Bill is "<<bill<<endl;
+    }
+    if (hours>5 && hours<=20)
+    {
+        bill = (hours-5)*0.75 + 16.75;
+        cout <<"The Calculated Bill is "<<bill<<endl;
+    }
+    if(hours<=5)
+    {
+        bill = 16.75;
+        cout <<"The Calculated Bill is "<<bill<<endl;
+    }
+    break;
+
+    case 2:
+    if (hours>25)
+    {
+        bill = (hours-25)*0.7 +(10)*0.55+23.75;
+        cout <<"The Calculated Bill is "<<bill<<endl;
+    }
+    if (hours>15 && hours<=25)
+    {
+        bill = (hours-15)*0.55 + 23.75;
+        cout <<"The Calculated Bill is "<<bill<<endl;
+    }
+    if(hours<=15)
+    {
+        bill = 23.75;
+        cout <<"The Calculated Bill is "<<bill<<endl;
+    }
+    break;
+    
+    case 3:
+    bill=29.75;
+    cout << "The Calculated Bill is "<<bill<<endl;
+    break;
+    default:
+    cout << "Your choice is invalid."<<endl;
+    }
+
+    if (hours>25 && (choice==1 || choice==2))
+    {
+        cout<<" The most efficient plan is package 3"<<endl;
+        save = bill - 29.75;
+        cout<<"The amount of money saved: "<<save;
+    }
+    else if ((hours>=15 && hours<= 25 )&& (choice==3||choice==1))
+    {
+        cout<<" The most efficient plan is package 2"<<endl;
+        if(choice==3)
+        save = bill - ((hours-15)*0.55 + 23.75);
+        else if(choice==1)
+        save = bill - ((hours-20)*1 +(15)*0.75+16.75);
+        cout<<"The amount of money saved: "<<save;
+    }
+
+    else if ((hours>5 && hours< 15 )&& (choice==3||choice==2))
+    {
+        cout<<" The most efficient plan is package 1"<<endl;
+        save = bill - ((hours-5)*0.75 + 16.75);
+        cout<<"The amount money saved: "<<save;
+    }
+    else if (hours<=5 && (choice==3||choice==2))
+    {
+        cout<<" The most efficient plan is package 1"<<endl;
+        save = bill - (16.75);
+        cout<<"The amount money saved: "<<save;
+    }
+    else
+    {
+        cout<<" It is the money saving package";
+    }
+    return 0;
+}
