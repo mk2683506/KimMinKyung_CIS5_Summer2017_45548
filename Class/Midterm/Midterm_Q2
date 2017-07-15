@@ -1,0 +1,32 @@
+//midterm question 2
+
+#include<iostream>
+
+using namespace std;
+
+int main()
+{
+   char number[5];
+ 
+   cout<<"Enter a 4 digit character number"<<endl;
+   cin>>number;
+  
+   for(int i=3;i>=0;i--)
+   {
+       if(isdigit(number[i]))
+       {
+           cout<<number[i]<<" ";
+           int n=number[i]-'0';
+           while(n--)
+           {
+               cout<<"*";
+           }
+           cout<<endl;
+       }
+       else
+       {
+           cout<<number[i]<<" ?"<<endl;
+       }
+   }
+   return 0;
+}
