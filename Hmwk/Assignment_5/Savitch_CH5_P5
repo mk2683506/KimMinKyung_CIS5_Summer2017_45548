@@ -1,0 +1,48 @@
+//Savitch CH5 Problem 5
+
+#include <iostream> 
+using namespace std;
+
+
+int pounds = 0;
+int ounces = 0;
+float kg = 0.0;
+float g = 0.0;
+
+int answer = 0;
+
+
+float a = 2.2046;
+int temp = 0;
+
+void input(){
+    cout << "Pounds: ";
+    cin >> pounds;
+    cout << "Ounces: ";
+    cin >> ounces;
+}
+
+void calculate(){
+    kg = pounds * a;
+    temp = ounces / 16;
+    g = temp * a;
+    g = g * 1000;
+}
+
+void output(){
+    cout << "pounds and ounces to kilograms and grams" << endl;
+    input();
+    calculate();
+    cout << "There are " << pounds << " pounds, " << ounces << " ounces" 
+         << " in " << kg << " kilograms, " << g << " grams" << endl;
+         
+    cout << "To repeat calculation, enter 1";
+    cin >> answer;
+}
+
+
+int main(){
+while(answer == 0){
+    output();
+}
+}
