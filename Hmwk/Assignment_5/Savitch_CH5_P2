@@ -1,0 +1,50 @@
+//problem number 2
+
+#include <iostream> 
+using namespace std;
+
+
+int inches = 0;
+int feet = 0;
+float meters = 0.0;
+float centimeters = 0.0;
+
+int answer = 0;
+
+
+//calculations
+float a = 0.3048;
+int temp = 0;
+float b = 0.0;
+
+void input(){
+    cout << "Feet: ";
+    cin >> feet;
+    cout << "Inches: ";
+    cin >> inches;
+}
+
+void calculate(){
+    meters = feet * a;
+    temp = inches / 12;
+    centimeters = temp * a;
+    centimeters = centimeters * 100;
+}
+
+void output(){
+    cout << "feet and inches to meters and centimeters" << endl;
+    input();
+    calculate();
+    cout << "There are " << meters << " meters, " << centimeters << " centimeters" 
+         << " in " << feet << " feet, " << inches << " inches" << endl;
+         
+    cout << "To repeat calculation, enter 1";
+    cin >> answer;
+}
+
+
+int main(){
+while(answer == 0){
+    output();
+}
+}
